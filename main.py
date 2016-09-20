@@ -12,3 +12,6 @@ class Contact:
         self.all_contacts.append(self)
 
 
+    @classmethod
+    def reset_contacts(cls):
+        del cls.all_contacts[:]
