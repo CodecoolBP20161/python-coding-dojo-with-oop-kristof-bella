@@ -14,4 +14,9 @@ class Contact:
 
     @classmethod
     def reset_contacts(cls):
+
         del cls.all_contacts[:]
+
+
+class Supplier(Contact):
+    pass
