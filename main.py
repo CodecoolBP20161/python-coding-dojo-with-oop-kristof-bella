@@ -9,6 +9,13 @@ class ContactList(list):
                 matches.append(search_string)
         return matches
 
+    def longest_name(self):
+        longest = ""
+        for contact in self:
+            if len(contact.name) > len(longest):
+                longest = contact.name
+        if longest:
+            return longest
 
 class Contact:
 
