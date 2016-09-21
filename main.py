@@ -19,4 +19,13 @@ class Contact:
 
 
 class Supplier(Contact):
-    pass
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    all_orders = {}
+
+    def order(self, order):
+        if self.email in self.all_orders.keys():
+            self.all_orders[self.email].append(order)
+        else:
+            self.all_orders.update({self.email: [order]})
