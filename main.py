@@ -1,7 +1,18 @@
+class ContactList(list):
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+
+    def search(self, search_string):
+        matches = []
+        for contact in self:
+            if search_string in contact.name:
+                matches.append(search_string)
+        return matches
+
 
 class Contact:
 
-    all_contacts = []
+    all_contacts = ContactList()
 
     def __init__(self, name, email):
         self.name = name
