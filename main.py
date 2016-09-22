@@ -1,6 +1,4 @@
 class ContactList(list):
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
 
     def search(self, search_string):
         matches = []
@@ -17,6 +15,7 @@ class ContactList(list):
         if longest:
             return longest
 
+
 class Contact:
 
     all_contacts = ContactList()
@@ -27,18 +26,14 @@ class Contact:
         self.add_contacts()
 
     def add_contacts(self):
-        self.all_contacts.append(self)
-
+        self.__class__.all_contacts.append(self)
 
     @classmethod
     def reset_contacts(cls):
-
         del cls.all_contacts[:]
 
 
 class Supplier(Contact):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
 
     all_orders = {}
 
